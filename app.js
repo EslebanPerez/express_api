@@ -23,6 +23,13 @@ app.get('/v1/explorers/:id', (req, res) =>{
     const explorer = {id: 1, name: "Esleban"}
     res.status(200).json(explorer)
 })
+
+app.post('/v1/explorers', (req,res) =>{
+    console.log(`API explorers Post request ${new Date()}`)
+    const requestBody = req.body // Parámetros de un cliente
+    res.status(201).json({message : "Created"})
+})
+
 // Con esto iniclizamos esta app
 app.listen(port, () =>{
     console.log(`Example app listening on port ${port}`)
