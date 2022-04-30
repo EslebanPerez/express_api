@@ -37,6 +37,13 @@ app.put('/v1/explorers/:id', (req, res) =>{
     res.status(200).json({message : "Update!"})
 })
 
+app.delete('/v1/explorers/:id', (req, res) => {
+    console.log(`Api Explorers Delete request ${new Date()}`)
+    console.log(`Delete explorer eith id ${req.params.id}`)
+    const requestBody = req.body // Parámetros de un cliente
+    res.status(200).json({message: "Deleted!"})
+})
+
 // Con esto iniclizamos esta app
 app.listen(port, () =>{
     console.log(`Example app listening on port ${port}`)
